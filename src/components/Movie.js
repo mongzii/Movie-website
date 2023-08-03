@@ -6,6 +6,7 @@ function Movie({ coverImg, title, summary, genres }) {
       <img src={coverImg} alt={title} />
       <h2>
         <Link to="/movie">{title}</Link>
+        {/* 제목 클릭시 Detail컴포넌트연결 */}
       </h2>
       <p>{summary}</p>
       <ul>

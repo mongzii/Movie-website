@@ -9,6 +9,10 @@ const Aaa = styled.div`
   height: 7rem;
   /* position: fixed; */
 `;
+const SortStyle = styled.span`
+  /* color: red; */
+  margin: 30px;
+`;
 
 function Header() {
   const navigate = useNavigate();
@@ -19,9 +23,20 @@ function Header() {
         <h1>JETFLEX</h1>
         {/* <Link to="/movie/comedy">comedy</Link> */}
         <nav>
-          <span onClick={() => navigate("/movie/documentary")}>
-            documentary
-          </span>
+          <SortStyle onClick={() => navigate("/movie/documentary")}>
+            Documentary
+          </SortStyle>
+          <SortStyle onClick={() => navigate("/movie/action")}>
+            Action
+          </SortStyle>
+          <SortStyle onClick={() => navigate("/movie/biography")}>
+            Biography
+          </SortStyle>
+          <SortStyle onClick={() => navigate("/movie/drama")}>Drama</SortStyle>
+          <SortStyle onClick={() => navigate("/movie/music")}>Music</SortStyle>
+          <SortStyle onClick={() => navigate("/movie/mystery")}>
+            Mystery
+          </SortStyle>
         </nav>
       </Aaa>
     </div>

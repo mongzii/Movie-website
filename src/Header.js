@@ -3,15 +3,25 @@ import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
 const Aaa = styled.div`
-  border: 1px solid black;
-  background-color: skyblue;
-  width: 100%;
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  width: 98%;
   height: 7rem;
   /* position: fixed; */
+  > h1 {
+    padding-top: 5px;
+    padding-left: 15px;
+    letter-spacing: 3px;
+    cursor: pointer;
+  }
 `;
 const SortStyle = styled.span`
   /* color: red; */
   margin: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
 `;
 
 function Header() {
@@ -20,7 +30,7 @@ function Header() {
   return (
     <div>
       <Aaa>
-        <h1>JETFLEX</h1>
+        <h1 onClick={() => navigate("/")}>JETFLEX</h1>
         {/* <Link to="/movie/comedy">comedy</Link> */}
         <nav>
           <SortStyle onClick={() => navigate("/movie/documentary")}>

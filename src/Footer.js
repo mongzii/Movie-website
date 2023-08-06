@@ -9,7 +9,7 @@ const Aaa = styled.div`
 function Footer() {
   return (
     <div>
-      <Aaa>footer다</Aaa>
+      <Aaa>By mongzii</Aaa>
     </div>
   );
 }

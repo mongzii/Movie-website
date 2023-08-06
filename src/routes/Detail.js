@@ -1,17 +1,30 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 function Detail() {
   const { id } = useParams();
   // console.log(id);
+  const [intro, setIntro] = useState([]);
+
   useEffect(() => {
     axios
       .get(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
-      .then(res => console.log(res.data.data.movie));
+      .then(res => {
+        setIntro(res.data.data.movie);
+        console.log(res.data.data.movie);
+      });
   }, []);
 
-  return <h1>detail다</h1>;
+  return (
+    <div>
+      <h1>detail다</h1>
+      {/* {console.log(intro)} */}
+      <img src={intro.medium_cover_image} alt={intro.title} />
+      <h1>{intro.title_long}</h1>
+      <p>{intro.description_full}</p>
+    </div>
+  );
 }
 
 export default Detail;

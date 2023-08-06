@@ -18,7 +18,6 @@ function Detail() {
 
   return (
     <div>
-      <h1>detail다</h1>
       {/* {console.log(intro)} */}
       <img src={intro.medium_cover_image} alt={intro.title} />
       <h1>{intro.title_long}</h1>

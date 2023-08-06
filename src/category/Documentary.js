@@ -37,7 +37,7 @@ function Documentary() {
         }
       });
   }, []);
-  //   console.log(newArr);
+  console.log(newArr);
   //   console.log(result[0]);
 
   return (

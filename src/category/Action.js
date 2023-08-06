@@ -1,6 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Header from "../Header";
+import Footer from "../Footer";
+import { styled } from "styled-components";
+
 // import Movie from "../components/Movie";
+
+const MainStyled = styled.div`
+  border: 10px solid blue;
+`;
 
 function Action() {
   //   let result = [];
@@ -42,20 +50,35 @@ function Action() {
 
   return (
     <>
+      <Header />
       {/* <p>documentary모은거다</p> */}
       {/* {console.log(newArr[0].title)} */}
       {/* <p>{console.log(result)}</p> */}
       {/* <p>{console.log(result[0])}</p> */}
       {/* {console.log(result[0])} */}
+
       {loading ? (
         <h1>Loading....</h1>
       ) : (
         <div>
-          {newArr.map(el => (
+          {/* {newArr.map(el => (
             <p key={el.id}>{el.title}</p>
+          ))}
+          {newArr.map(movie => (
+            title={movie.title}
+            summary={movie.summary}
+            ))} */}
+
+          {newArr.map(el => (
+            <div key={el.id}>
+              <img src={el.medium_cover_image} alt={el.title} />
+              <p>{el.title}</p>
+              <p>{el.summary}</p>
+            </div>
           ))}
         </div>
       )}
+      <Footer />
     </>
   );
 }

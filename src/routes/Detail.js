@@ -12,8 +12,10 @@ function Detail() {
       .get(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
       .then(res => {
         setIntro(res.data.data.movie);
-        console.log(res.data.data.movie);
-      });
+        // console.log(res.data.data.movie);
+        console.log(res);
+      })
+      .catch(err => console.error(err));
   }, []);
 
   return (

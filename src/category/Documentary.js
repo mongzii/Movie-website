@@ -1,6 +1,23 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Header from "../Header";
+import Footer from "../Footer";
+import { styled } from "styled-components";
+
 // import Movie from "../components/Movie";
+
+const MainStyled = styled.div`
+  border: 10px solid red;
+  margin: 20px;
+  width: 88%;
+  display: flex;
+  flex-direction: row;
+`;
+const PartStyled = styled.div`
+  border: 5px solid blue;
+  margin: 10px;
+  padding: 7px;
+`;
 
 function Documentary() {
   //   let result = [];
@@ -37,25 +54,54 @@ function Documentary() {
         }
       });
   }, []);
-  console.log(newArr);
+  //   console.log(newArr);
   //   console.log(result[0]);
 
   return (
     <>
+      <Header />
       {/* <p>documentary모은거다</p> */}
       {/* {console.log(newArr[0].title)} */}
       {/* <p>{console.log(result)}</p> */}
       {/* <p>{console.log(result[0])}</p> */}
       {/* {console.log(result[0])} */}
+
       {loading ? (
         <h1>Loading....</h1>
       ) : (
         <div>
-          {newArr.map(el => (
+          {/* {newArr.map(el => (
             <p key={el.id}>{el.title}</p>
+          ))}
+          {newArr.map(movie => (
+            title={movie.title}
+            summary={movie.summary}
+            ))} */}
+
+          {newArr.map(el => (
+            <div key={el.id}>
+              <MainStyled>
+                <img src={el.medium_cover_image} alt={el.title} />
+                <PartStyled>
+                  <h2>{el.title}</h2>
+                  {/* <p>{el.summary}</p> */}
+                  <p>
+                    {el.summary.length > 250
+                      ? `${el.summary.slice(0, 250)}......`
+                      : el.summary}
+                  </p>
+                  <ul>
+                    {el.genres.map(item => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </PartStyled>
+              </MainStyled>
+            </div>
           ))}
         </div>
       )}
+      <Footer />
     </>
   );
 }

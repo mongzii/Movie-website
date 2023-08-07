@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+// import { Link } from "react-router-dom";
 import Header from "../Header";
 import Footer from "../Footer";
 import { styled } from "styled-components";
@@ -7,10 +8,19 @@ import { styled } from "styled-components";
 // import Movie from "../components/Movie";
 
 const MainStyled = styled.div`
-  border: 10px solid blue;
+  /* border: 10px solid red; */
+  margin: 20px;
+  width: 88%;
+  display: flex;
+  flex-direction: row;
+`;
+const PartStyled = styled.div`
+  /* border: 5px solid blue; */
+  margin: 10px;
+  padding: 7px;
 `;
 
-function Action() {
+function Action({ id }) {
   //   let result = [];
   const [loading, setLoading] = useState(true);
   const [newArr, setNewArr] = useState([]);
@@ -71,9 +81,23 @@ function Action() {
 
           {newArr.map(el => (
             <div key={el.id}>
-              <img src={el.medium_cover_image} alt={el.title} />
-              <p>{el.title}</p>
-              <p>{el.summary}</p>
+              <MainStyled>
+                <img src={el.medium_cover_image} alt={el.title} />
+                <PartStyled>
+                  <h2>{el.title}</h2>
+                  {/* <p>{el.summary}</p> */}
+                  <p>
+                    {el.summary.length > 250
+                      ? `${el.summary.slice(0, 250)}......`
+                      : el.summary}
+                  </p>
+                  <ul>
+                    {el.genres.map(item => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </PartStyled>
+              </MainStyled>
             </div>
           ))}
         </div>

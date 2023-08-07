@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 
 const TotalMained = styled.div`
-  /* border: 10px solid red; */
+  border: 10px solid red;
   width: 88%;
   margin: 20px;
   display: flex;
   flex-direction: row;
 `;
 const PartMained = styled.div`
-  /* border: 5px solid blue; */
+  border: 5px solid blue;
   margin: 10px;
   padding: 7px;
   display: flex;

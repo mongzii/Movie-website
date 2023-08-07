@@ -50,10 +50,10 @@ function Detail() {
       ) : (
         <MainStyled>
           <img src={intro.large_cover_image} alt={intro.title} />
-
           <h1>{intro.title_long}</h1>
           <p>{intro.description_full}</p>
           {/* <button onClick={() => goback()}>back</button> */}
+          {/* <button onClick={() => navigate("/")}>Home</button> */}
           <button onClick={() => navigate("/")}>Home</button>
         </MainStyled>
       )}

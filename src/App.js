@@ -14,16 +14,37 @@ import Mystery from "./category/Mystery";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/movie/:id" element={<Detail />} />
-          <Route path="/movie/documentary" element={<Documentary />} />
-          <Route path="/movie/action" element={<Action />} />
-          <Route path="/movie/biography" element={<Biography />} />
-          <Route path="/movie/drama" element={<Drama />} />
-          <Route path="/movie/music" element={<Music />} />
-          <Route path="/movie/mystery" element={<Mystery />} />
+          <Route path={process.env.PUBLIC_URL + "/"} element={<Home />} />
+          <Route
+            path={process.env.PUBLIC_URL + "/movie/:id"}
+            element={<Detail />}
+          />
+          <Route
+            path={process.env.PUBLIC_URL + "/movie/documentary"}
+            element={<Documentary />}
+          />
+          <Route
+            path={process.env.PUBLIC_URL + "/movie/action"}
+            element={<Action />}
+          />
+          <Route
+            path={process.env.PUBLIC_URL + "/movie/biography"}
+            element={<Biography />}
+          />
+          <Route
+            path={process.env.PUBLIC_URL + "/movie/drama"}
+            element={<Drama />}
+          />
+          <Route
+            path={process.env.PUBLIC_URL + "/movie/music"}
+            element={<Music />}
+          />
+          <Route
+            path={process.env.PUBLIC_URL + "/movie/mystery"}
+            element={<Mystery />}
+          />
         </Routes>
       </BrowserRouter>
     </>

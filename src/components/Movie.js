@@ -23,7 +23,7 @@ function Movie({ id, coverImg, title, summary, genres }) {
         <img src={coverImg} alt={title} />
         <PartMained>
           <h2>
-            <Link to={process.env.PUBLIC_URL + `/movie/${id}`}>{title}</Link>
+            <Link to={`/movie/${id}`}>{title}</Link>
             {/* 제목 클릭시 Detail컴포넌트연결 */}
           </h2>
 

@@ -32,7 +32,7 @@ function Home() {
       .then(res => {
         setMovies(res.data.data.movies);
         // console.log(res.data.data.movies);
-        console.log(res.data.data.movies);
+        // console.log(res.data.data.movies);
         setLoading(false);
       })
       .catch(err => console.error(err));

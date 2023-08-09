@@ -37,7 +37,7 @@ function Detail() {
         setIntro(res.data.data.movie);
         // console.log(res.data.data.movie);
         setLoading(false);
-        console.log(res);
+        // console.log(res);
       })
       .catch(err => console.error(err));
   }, []);

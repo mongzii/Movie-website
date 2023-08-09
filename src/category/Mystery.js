@@ -7,14 +7,14 @@ import { styled } from "styled-components";
 // import Movie from "../components/Movie";
 
 const MainStyled = styled.div`
-  border: 10px solid red;
+  /* border: 10px solid red; */
   margin: 20px;
   width: 88%;
   display: flex;
   flex-direction: row;
 `;
 const PartStyled = styled.div`
-  border: 5px solid blue;
+  /* border: 5px solid blue; */
   margin: 10px;
   padding: 7px;
 `;
